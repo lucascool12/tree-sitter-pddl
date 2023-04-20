@@ -6,7 +6,7 @@ module.exports = grammar({
     rules: {
         source_file: $ => $.statement,
 
-        statement: $ => prec(1, seq('(',
+        statement: $ => token(prec(1, seq('(',
             choice($.name, $.parameter),
             repeat(
                     choice(
@@ -18,7 +18,7 @@ module.exports = grammar({
                     ),
             ),
             ')'
-        )),
+        ))),
         _names: $ => prec.right(repeat1($.name)),
         name: $ => /[^\?\(\)\s][^\s\(\)]*/,
         parameters_with_type: $ => seq(
