@@ -20,13 +20,13 @@ module.exports = grammar({
             ')'
         )),
         _names: $ => prec.right(repeat1($.name)),
-        name: $ => /[^\?\(\)\s][^\s\(\)]*/,
+        name: $ => /[^\?\(\)\s;][^\s\(\);]*/,
         parameters_with_type: $ => seq(
             repeat1($.parameter),
             $.type
         ),
         _parameters: $ => prec.right(repeat1($.parameter)),
-        parameter: $ => /\?[^\s\(\)]+/,
+        parameter: $ => /\?[^\s\(\);]+/,
         
         type: $ => seq('-', $.name),
         type_dec: $ => seq(

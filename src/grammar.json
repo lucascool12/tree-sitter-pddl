@@ -84,7 +84,7 @@
     },
     "name": {
       "type": "PATTERN",
-      "value": "[^\\?\\(\\)\\s][^\\s\\(\\)]*"
+      "value": "[^\\?\\(\\)\\s;][^\\s\\(\\);]*"
     },
     "parameters_with_type": {
       "type": "SEQ",
@@ -115,7 +115,7 @@
     },
     "parameter": {
       "type": "PATTERN",
-      "value": "\\?[^\\s\\(\\)]+"
+      "value": "\\?[^\\s\\(\\);]+"
     },
     "type": {
       "type": "SEQ",
